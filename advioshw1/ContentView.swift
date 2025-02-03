@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentPage = 0
-    private let totalPages = 4
+    private let totalPages = 3
 
     var body: some View {
         ZStack {
@@ -64,6 +64,20 @@ struct ContentView: View {
                 CarProgressView(currentPage: currentPage, totalPages: totalPages)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 30)
+            }
+            
+            if currentPage == totalPages - 1 {
+                VStack {
+                    Spacer()
+                    Button(action: { withAnimation { currentPage = 0 }}) {
+                        Text("Return to First Page")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .cornerRadius(10)
+                    }.padding(.bottom, 80)
+                }
             }
         }
     }
