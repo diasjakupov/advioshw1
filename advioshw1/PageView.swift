@@ -54,7 +54,8 @@ struct PageView: View {
                                 .opacity(animateContent ? 1 : 0)
                                 .scaleEffect(animateContent ? 1 : 0.8)
                                 .animation(.easeInOut(duration: 0.8).delay(0.6), value: animateContent)
-                        case .failure:
+                        case .failure(let error):
+                            Text("AsyncImage failed to load with error: \(error.localizedDescription)")
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)

@@ -12,32 +12,7 @@ struct ContentView: View {
     @State private var pulsate = false
     
 
-    private let pages: [Page] = [
-        Page(
-            title: "About Me",
-            description: "Hello! My name is Dias Jakupov, currently working as an Android Developer (1+ year, Zimran)",
-            color: .red,
-            imageName: nil
-        ),
-        Page(
-            title: "More about work",
-            description: "The product my team developing is Educational application - Finelo (how to invest?)",
-            color: .purple,
-            imageName: URL(string: "https://play-lh.googleusercontent.com/ZDPDWehDC2rC4J_ybtYha08QDJtjDBAAtJNLLx0TINgiZj4IiDnOtvD9faTdwmdpEg")
-        ),
-        Page(
-            title: "Why IOS?",
-            description: "I enjoy challenging myself + I always wanted to give iOS development a shot and learn something similar to my work",
-            color: .blue,
-            imageName: nil
-        ),
-        Page(
-            title: "Hobby",
-            description: "I love reading books. My favarite ones are Dune (1, 2 books) and TBATE (WebNovel). I also like playing video games (Cyberpunk is my favorite), and doing GYM",
-            color: .green,
-            imageName: URL(string: "https://m.media-amazon.com/images/I/81SPzHO2nxL._UF1000,1000_QL80_.jpg")
-        )
-    ]
+    private let pages: [Page] = PageData.shared.pages
 
 
     private var isLastPage: Bool {
